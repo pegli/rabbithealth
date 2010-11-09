@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <title>HRS Health Database</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div class="box" style="width: 785px;">
+      <div id="header">
+        <a href="index.html"><img src="images/logo.png"/></a>
+        <div id="account"></div>
+      </div>
+      <div id="navigation"></div>
+      <div id="content"></div>
+      <div id="footer">
+        Copyright &copy; 2010 House Rabbit Society, Inc.
+      </div>
+    </div>
+  </body>
+  <script src="vendor/couchapp/loader.js"></script>
+  <script src="vendor/couchapp/jquery.pathbinder.js"></script>  
+  <script type="text/javascript" charset="utf-8">
+    $.couch.app(function(app) {
+        $.evently.log = true;
+
+        $("#account").evently("account", app);
+        $("#navigation").evently("navigation", app);
+        $("#content").evently("content", app);
+        
+        $.evently.connect("#account","#navigation", ["loggedIn","loggedOut"]);
+        $.evently.connect("#navigation", "#content", ["news", "about", "bunnies", "profile"]);
+
+        $.pathbinder.begin("/news");
+    });
+  </script>
+</html>
