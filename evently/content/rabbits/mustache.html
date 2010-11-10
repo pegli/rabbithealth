@@ -1,0 +1,21 @@
+<ol class="rabbits">
+{{#rabbits}}
+<li>
+  {{#thumbnail}}
+  <img src="{{thumbnail}}" width="120"/>
+  {{/thumbnail}}
+  {{^thumbnail}}
+  <img src="images/nophoto.jpg" width="120"/>
+  {{/thumbnail}}
+  <div style="margin-left: 130px">
+    <h2>{{name}}</h2>
+    <p>
+    {{primary_color}} {{gender}} {{breed}}
+    </p>
+    <p>(other information like most recent health entry?)</p>
+    <a href="#/rabbit/edit/{{id}}">change {{name}}'s info</a> | <a href="#/rabbit/health/{{id}}">view health records</a>
+  </div>
+</li>
+{{/rabbits}}
+</ol>
+<a href="#/rabbit/new">add another rabbit</a>

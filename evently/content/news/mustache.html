@@ -2,7 +2,7 @@
   {{#articles}}
   <li>
     <h2>{{title}}</h2>
-    <span class="postdate">posted {{post_date}}</span>
+    <span class="postdate">posted {{post_date}}{{#author}} by {{author}}{{/author}}</span>
     <br/>
     {{{text}}}
   </li>

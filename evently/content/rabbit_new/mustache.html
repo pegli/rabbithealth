@@ -1,0 +1,74 @@
+<form class="vital-stats">
+  <input type="hidden" name="t_" value="rabbit"/>
+  <input type="hidden" name="guardian" value="{{guardian}}"/>
+  <fieldset>
+    <legend>General Information</legend>
+    <ol>
+      <li>
+        <label for="name">Name <em>*</em></label>
+        <input name="name"/>
+      </li>
+      <li>
+        <label for="gender">Gender</label>
+        <input type="radio" checked="checked" name="gender" value="m"/>Male
+        <input type="radio" name="gender" value="f"/>Female
+      </li>
+      <li>
+        <label for="birth_date">Date of Birth</label>
+        <input type="text" name="birth_date" class="datepicker"/>
+      </li>
+      <li>
+        <label for="primary_color">Hair Color</label>
+        <input name="primary_color"/>
+        <!-- TODO drop-down? -->
+      </li>
+      <li>
+        <label for="breed">Breed</label>
+        <input name="breed"/>
+      </li>
+      <li>
+        <fieldset>
+          <legend>Patterns and Markings</legend>
+          <label><input name="markings" type="checkbox" value="agouti"/>Agouti</label>
+          <label><input name="markings" type="checkbox" value="checkered"/>Checkered</label>
+          <label><input name="markings" type="checkbox" value="dark_extremities"/>Dark ears/feet/tail</label>
+          <label><input name="markings" type="checkbox" value="dark_eyes"/>Dark tips/eyeliner</label>
+          <label><input name="markings" type="checkbox" value="frosty"/>Frosty point</label>
+          <label><input name="markings" type="checkbox" value="white_eye"/>White eye circles</label>
+          <label><input name="markings" type="checkbox" value="multicolor"/>Multi-color</label>
+          <label><input name="markings" type="checkbox" value="saddled"/>Saddled</label>
+          <label><input name="markings" type="checkbox" value="solid"/>Solid</label>
+          <label><input name="markings" type="checkbox" value="spotted"/>Spotted</label>
+          <label><input name="markings" type="checkbox" value="striped"/>Striped</label>
+          <label><input name="markings" type="checkbox" value="ticked"/>Ticked</label>
+          <label><input name="markings" type="checkbox" value="tortoise"/>Tortoise</label>
+        </fieldset>
+      </li>
+      <li>
+        <fieldset>
+          <legend>Eye Color</legend>
+          <label><input type="radio" checked="checked" name="eye_color" value="amber"/>Amber</label>
+          <label><input type="radio" name="eye_color" value="blue"/>Blue</label>
+          <label><input type="radio" name="eye_color" value="brown"/>Brown</label>
+          <label><input type="radio" name="eye_color" value="gray"/>Gray</label>
+          <label><input type="radio" name="eye_color" value="pink"/>Pink</label>
+        </fieldset>
+      </li>
+      <li>
+        <input type="submit" value="Save"/>
+      </li>
+    </ol>
+  </fieldset>
+</form>
+
+<a href="#/rabbits">back</a>
+
+<script>
+$(function() {
+    $(".datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+});
+</script>
+

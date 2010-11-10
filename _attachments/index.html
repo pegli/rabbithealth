@@ -3,6 +3,17 @@
   <head>
     <title>HRS Health Database</title>
     <link rel="stylesheet" href="style/main.css" type="text/css">
+    <link rel="stylesheet" href="style/south-street/jquery-ui-1.8.6.custom.css" type="text/css"/>
+    <script src="https://www.google.com/jsapi?key=ABQIAAAAf6Ksk-blB6CFNNubq3mGjhT4SvuBd_yt6WZ56JMBF5qzdYlejhR8ItJ7KiVOHe1IUX98gJch7-WINg" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+      //<![CDATA[
+      google.load("jquery", "1.4.3");
+      google.load("jqueryui", "1.8.6");
+      function googleOnLoad() {
+      }
+      google.setOnLoadCallback(googleOnLoad);
+      //]]>
+    </script>
   </head>
   <body>
     <div class="box" style="width: 785px;">
@@ -17,7 +28,7 @@
       </div>
     </div>
   </body>
-  <script src="vendor/couchapp/loader.js"></script>
+  <script src="js/loader.js"></script>  
   <script src="vendor/couchapp/jquery.pathbinder.js"></script>  
   <script type="text/javascript" charset="utf-8">
     $.couch.app(function(app) {
@@ -28,7 +39,7 @@
         $("#content").evently("content", app);
         
         $.evently.connect("#account","#navigation", ["loggedIn","loggedOut"]);
-        $.evently.connect("#navigation", "#content", ["news", "about", "bunnies", "profile"]);
+        $.evently.connect("#navigation", "#content", ["news", "about", "rabbits", "profile"]);
 
         $.pathbinder.begin("/news");
     });

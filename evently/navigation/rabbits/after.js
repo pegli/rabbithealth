@@ -1,4 +1,4 @@
 function(e) {
     $("#navigation li").removeClass("selected");
-    $("#nav_bunnies").addClass("selected");
+    $("#nav_rabbits").addClass("selected");
 }

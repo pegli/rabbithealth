@@ -32,6 +32,8 @@ h2 {
 	color: #969696;
 }
 
+/* LISTS */
+
 ol.news {
 	list-style: none;
 	padding: 0;
@@ -42,6 +44,81 @@ ol.news li {
 	margin: 0;
 	padding: 12px;
 }
+
+ol.rabbits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ol.rabbits li {
+    margin: 0;
+    padding: 12px;
+    min-height: 160px;
+}
+
+ol.rabbits li img {
+	float: left;
+	padding: 0 10px;
+}
+
+/* FORMS */
+
+form.vital-stats fieldset {
+	margin-bottom: 10px;
+}
+
+form.vital-stats legend {
+	padding: 0 2px;
+	font-weight: bold;
+}
+
+form.vital-stats fieldset ol {
+	margin: 0;
+	padding: 0;
+}
+
+form.vital-stats fieldset li {
+	list-style: none;
+	padding: 5px;
+	margin: 0;
+}
+
+form.vital-stats fieldset fieldset {
+	border: none;
+	margin: 3px 0 0;
+}
+
+form.vital-stats fieldset fieldset legend {
+	float: left;
+	padding: 0 0 5px;
+	font-weight: normal;
+}
+
+form.vital-stats fieldset fieldset label {
+	display: block;
+	width: auto;
+	text-align: left;
+}
+
+form.vital-stats em {
+	font-weight: bold;
+	font-style: normal;
+	color: #f00;
+}
+
+form.vital-stats label {
+	width: 120px;
+	display: inline-block;
+	text-align: right;
+	margin-right: 10px;
+}
+
+form.vital-stats fieldset fieldset label {
+	margin-left: 128px;
+}
+
+/* DIVS */
 
 #header {
 	height: 100px;
