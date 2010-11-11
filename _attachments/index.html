@@ -31,8 +31,16 @@
   <script src="js/loader.js"></script>  
   <script src="vendor/couchapp/jquery.pathbinder.js"></script>  
   <script type="text/javascript" charset="utf-8">
+    var opts = {};
+    if (document.location.pathname.indexOf("_design") == -1) {
+      // we are in a vhost
+      opts.db = "healthdb";
+      opts.design = "rabbithealth";
+    };
     $.couch.app(function(app) {
         $.evently.log = true;
+
+        var design = app.ddoc;
 
         $("#account").evently("account", app);
         $("#navigation").evently("navigation", app);
@@ -42,6 +50,6 @@
         $.evently.connect("#navigation", "#content", ["news", "about", "rabbits", "profile"]);
 
         $.pathbinder.begin("/news");
-    });
+    }, opts);
   </script>
 </html>

@@ -1,4 +1,4 @@
-<form class="vital-stats">
+<form class="data-entry">
   <input type="hidden" name="t_" value="rabbit"/>
   <input type="hidden" name="guardian" value="{{guardian}}"/>
   <fieldset>
@@ -24,44 +24,36 @@
       </li>
       <li>
         <label for="breed">Breed</label>
-        <input name="breed"/>
+        <select name="breed">
+          {{#breeds}}
+          <option {{#value}}value="{{value}}"{{/value}}>{{name}}</option>
+          {{/breeds}}
+        </select>
+        <label><input type="checkbox" name="mixed_breed" value="true"/>mixed</label>
       </li>
       <li>
         <fieldset>
           <legend>Patterns and Markings</legend>
-          <label><input name="markings" type="checkbox" value="agouti"/>Agouti</label>
-          <label><input name="markings" type="checkbox" value="checkered"/>Checkered</label>
-          <label><input name="markings" type="checkbox" value="dark_extremities"/>Dark ears/feet/tail</label>
-          <label><input name="markings" type="checkbox" value="dark_eyes"/>Dark tips/eyeliner</label>
-          <label><input name="markings" type="checkbox" value="frosty"/>Frosty point</label>
-          <label><input name="markings" type="checkbox" value="white_eye"/>White eye circles</label>
-          <label><input name="markings" type="checkbox" value="multicolor"/>Multi-color</label>
-          <label><input name="markings" type="checkbox" value="saddled"/>Saddled</label>
-          <label><input name="markings" type="checkbox" value="solid"/>Solid</label>
-          <label><input name="markings" type="checkbox" value="spotted"/>Spotted</label>
-          <label><input name="markings" type="checkbox" value="striped"/>Striped</label>
-          <label><input name="markings" type="checkbox" value="ticked"/>Ticked</label>
-          <label><input name="markings" type="checkbox" value="tortoise"/>Tortoise</label>
+          {{#markings}}
+          <label><input name="markings" type="checkbox" value="{{value}}">{{name}}</label>
+          {{/markings}}
         </fieldset>
       </li>
       <li>
         <fieldset>
           <legend>Eye Color</legend>
-          <label><input type="radio" checked="checked" name="eye_color" value="amber"/>Amber</label>
-          <label><input type="radio" name="eye_color" value="blue"/>Blue</label>
-          <label><input type="radio" name="eye_color" value="brown"/>Brown</label>
-          <label><input type="radio" name="eye_color" value="gray"/>Gray</label>
-          <label><input type="radio" name="eye_color" value="pink"/>Pink</label>
+          {{#eyecolors}}
+          <label><input type="radio" name="eye_color" value="{{value}}"/>{{name}}</label>
+          {{/eyecolors}}
         </fieldset>
       </li>
       <li>
-        <input type="submit" value="Save"/>
+        <input type="submit" value="Save"/> <a href="#/rabbits">Cancel</a>
       </li>
     </ol>
   </fieldset>
 </form>
 
-<a href="#/rabbits">back</a>
 
 <script>
 $(function() {

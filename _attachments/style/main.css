@@ -26,6 +26,10 @@ h2 {
 	margin-right: auto;
 }
 
+.errors {
+	font-color: red;
+}
+
 .postdate {
 	font-size: smaller;
 	font-style: italic;
@@ -64,58 +68,57 @@ ol.rabbits li img {
 
 /* FORMS */
 
-form.vital-stats fieldset {
+form.data-entry fieldset {
 	margin-bottom: 10px;
 }
 
-form.vital-stats legend {
+form.data-entry legend {
 	padding: 0 2px;
 	font-weight: bold;
 }
 
-form.vital-stats fieldset ol {
+form.data-entry fieldset ol {
 	margin: 0;
 	padding: 0;
 }
 
-form.vital-stats fieldset li {
+form.data-entry fieldset li {
 	list-style: none;
 	padding: 5px;
 	margin: 0;
 }
 
-form.vital-stats fieldset fieldset {
+form.data-entry fieldset fieldset {
 	border: none;
 	margin: 3px 0 0;
+	margin-left: 130px;
 }
 
-form.vital-stats fieldset fieldset legend {
+form.data-entry fieldset fieldset legend {
 	float: left;
 	padding: 0 0 5px;
 	font-weight: normal;
+	width: 120px;
+	margin-left: -130px;
+	text-align: right;
 }
 
-form.vital-stats fieldset fieldset label {
-	display: block;
-	width: auto;
+form.data-entry fieldset fieldset label {
+	display: inline-block;
 	text-align: left;
 }
 
-form.vital-stats em {
+form.data-entry em {
 	font-weight: bold;
 	font-style: normal;
 	color: #f00;
 }
 
-form.vital-stats label {
-	width: 120px;
+form.data-entry label {
+	width: 130px;
 	display: inline-block;
 	text-align: right;
 	margin-right: 10px;
-}
-
-form.vital-stats fieldset fieldset label {
-	margin-left: 128px;
 }
 
 /* DIVS */
