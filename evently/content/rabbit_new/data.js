@@ -1,12 +1,18 @@
-function() {
+function(doc) {
     var userCtx = $$("#account").userCtx,
         guardian = userCtx && userCtx.name,
+        dates = $$(this).app.require("lib/dates"),
         rabbit = $$(this).app.require("data/rabbit");
 
-    return {
+    var birthDate = dates.arrayToDate(doc.birth_date);
+    
+    $.extend(doc, {
         "guardian" : guardian,
-        "breeds" : rabbit.breeds,
-        "markings": rabbit.markings,
-        "eyecolors": rabbit.eyecolors
-    }
+        "birth_date" : $.datepicker.formatDate("mm/dd/yy", birthDate),
+        "all_breeds" : rabbit.breeds,
+        "all_markings": rabbit.markings,
+        "all_eyecolors": rabbit.eyecolors
+    });
+
+    return doc; 
 }

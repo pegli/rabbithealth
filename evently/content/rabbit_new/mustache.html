@@ -1,12 +1,14 @@
 <form class="data-entry">
   <input type="hidden" name="t_" value="rabbit"/>
+  <input type="hidden" name="_id" value="{{_id}}"/>
+  <input type="hidden" name="_rev" value="{{_rev}}"/>
   <input type="hidden" name="guardian" value="{{guardian}}"/>
   <fieldset>
     <legend>General Information</legend>
     <ol>
       <li>
         <label for="name">Name <em>*</em></label>
-        <input name="name"/>
+        <input name="name" value="{{name}}"/>
       </li>
       <li>
         <label for="gender">Gender</label>
@@ -15,52 +17,42 @@
       </li>
       <li>
         <label for="birth_date">Date of Birth</label>
-        <input type="text" name="birth_date" class="datepicker"/>
+        <input type="text" name="birth_date" class="datepicker" value="{{birth_date}}"/>
       </li>
       <li>
         <label for="primary_color">Hair Color</label>
-        <input name="primary_color"/>
+        <input name="primary_color" value="{{primary_color}}"/>
         <!-- TODO drop-down? -->
       </li>
       <li>
         <label for="breed">Breed</label>
         <select name="breed">
-          {{#breeds}}
+          {{#all_breeds}}
           <option {{#value}}value="{{value}}"{{/value}}>{{name}}</option>
-          {{/breeds}}
+          {{/all_breeds}}
         </select>
         <label><input type="checkbox" name="mixed_breed" value="true"/>mixed</label>
       </li>
       <li>
         <fieldset>
           <legend>Patterns and Markings</legend>
-          {{#markings}}
+          {{#all_markings}}
           <label><input name="markings" type="checkbox" value="{{value}}">{{name}}</label>
-          {{/markings}}
+          {{/all_markings}}
         </fieldset>
       </li>
       <li>
         <fieldset>
           <legend>Eye Color</legend>
-          {{#eyecolors}}
+          {{#all_eyecolors}}
           <label><input type="radio" name="eye_color" value="{{value}}"/>{{name}}</label>
-          {{/eyecolors}}
+          {{/all_eyecolors}}
         </fieldset>
       </li>
       <li>
-        <input type="submit" value="Save"/> <a href="#/rabbits">Cancel</a>
+        <input type="submit" value="Save"/> 
+        <button onclick="javascript:document.location.href='#/rabbits';return false;">Cancel</button>
       </li>
     </ol>
   </fieldset>
 </form>
-
-
-<script>
-$(function() {
-    $(".datepicker").datepicker({
-        changeMonth: true,
-        changeYear: true
-    });
-});
-</script>
-
