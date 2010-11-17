@@ -1,0 +1,1 @@
+/rabbit/photos/:id/:rev

@@ -1,0 +1,25 @@
+<ul>
+  {{#attachments}}
+  <li><img src="{{uri}}" width="120"/></li>
+  {{/attachments}}
+</ul>
+<form class="data-entry">
+  <input type="hidden" name="_id" value="{{id}}"/>
+  <input type="hidden" name="_rev" value="{{rev}}"/>
+  <fieldset>
+    <legend>Add Photo</legend>
+    <ol>
+      <li>
+        <p>Please choose a small photo of your bunny.</p>
+      </li>
+      <li>
+        <label for="_attachments">Photo</label>
+        <input type="file" name="_attachments"/>
+      </li>
+      <li>
+        <input type="submit" value="Save"/> 
+        <button onclick="javascript:document.location.href='#/rabbits';return false;">Cancel</button>
+      </li>
+    </ol>
+  </fieldset>
+</form>

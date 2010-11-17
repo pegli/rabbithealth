@@ -7,13 +7,14 @@
   {{^thumbnail}}
   <img src="images/nophoto.jpg" width="120"/>
   {{/thumbnail}}
-  <div style="margin-left: 130px">
+  <div style="margin-left: 140px">
     <h2>{{name}}</h2>
     <p>
     {{primary_color}} {{gender}} {{breed}}
     </p>
     <p>(other information like most recent health entry?)</p>
-    <a href="#/rabbit/edit/{{id}}">change {{name}}'s info</a> | <a href="#/rabbit/health/{{id}}">view health records</a>
+    <a href="#/rabbit/photos/{{_id}}/{{_rev}}">photos</a> |
+    <a href="#/rabbit/edit/{{_id}}">change {{name}}'s info</a> | <a href="#/rabbit/health/{{_id}}">view health records</a>
   </div>
 </li>
 {{/rabbits}}

@@ -8,6 +8,7 @@ function couchapp_load(scripts) {
 
 couchapp_load([
   "js/jquery-1.4.2.min.js",
+  "js/jquery.form.js",
   "js/jquery-ui-1.8.6.custom.min.js",
   "/_utils/script/sha1.js",
   "/_utils/script/json2.js",
