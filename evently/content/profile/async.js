@@ -6,7 +6,7 @@ function(cb, e, params) {
     var userDocId = "org.couchdb.user:"+userCtx.name;
     db.openDoc(userDocId, {
         success : function(userDoc) {
-            var profile = userDoc["rabbithealth.profile"];
+            var profile = userDoc["rabbithealth.profile"] || {};
             cb(profile);
         }
     });
