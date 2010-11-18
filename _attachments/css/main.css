@@ -66,6 +66,16 @@ ol.rabbits li img {
 	padding: 0 10px;
 }
 
+ul.photo-list {
+	list-style: none;
+	display: inline-block;
+}
+
+ul.photo-list li {
+	width: 140px;
+	display: inline-block;
+}
+
 /* FORMS */
 
 form.data-entry fieldset {

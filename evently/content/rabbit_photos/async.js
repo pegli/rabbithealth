@@ -3,12 +3,13 @@ function(cb, e, params) {
     app.db.openDoc(docid, {
         success : function(doc) {
             var data = {};
-            data._id = docid;
-            data._rev = docrev;
+            data.id = docid;
+            data.rev = docrev;
             data.attachments = [];
             for (var a in doc._attachments) {
                 data.attachments.push({
-                    uri: [app.db.uri, $.couch.encodeDocId(docid), a].join('/')
+                    name : a,
+                    uri: [app.db.uri, $.couch.encodeDocId(docid), a].join('/'),
                 });
             }
             cb(data);

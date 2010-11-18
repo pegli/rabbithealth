@@ -1,6 +1,9 @@
-<ul>
+<ul class="photo-list">
   {{#attachments}}
-  <li><img src="{{uri}}" width="120"/></li>
+  <li>
+    <a href="{{uri}}" target="_new"><img src="{{uri}}" width="120"/></a>
+    <a name="delete" data-attname="{{name}}" href="#/rabbit/photos/{{id}}/{{rev}}">delete</a>
+  </li>
   {{/attachments}}
 </ul>
 <form class="data-entry">
